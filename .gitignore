@@ -1,0 +1,23 @@
+# Environment / secrets
+.env
+frontend/.streamlit/secrets.toml
+
+# Virtual environment
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Datasets
+*.csv
+
+# Logs
+*.log
+
+# ML models
+*.safetensors
+*.pkl
