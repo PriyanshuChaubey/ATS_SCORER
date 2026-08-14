@@ -91,6 +91,28 @@ streamlit run frontend/streamlit_app.py
 
 The backend runs on `http://localhost:8000` (docs at `/docs`), and the frontend on `http://localhost:8501`.
 
+## 🐳 Running with Docker
+
+The entire app (backend + frontend) is containerized and available on Docker Hub.
+
+### Pull and run directly
+
+```bash
+docker pull priyansh5002/ats-scorer:latest
+docker run -p 8000:8000 -p 8501:8501 --env-file .env priyansh5002/ats-scorer:latest
+```
+
+### Or build locally
+
+```bash
+docker build -t ats-scorer .
+docker run -p 8000:8000 -p 8501:8501 --env-file .env ats-scorer
+```
+
+The app will be available at `http://localhost:8501` (frontend) and `http://localhost:8000/docs` (backend API docs).
+
+> Note: you'll need a `.env` file with your Supabase and Groq credentials (see [Environment Variables](#environment-variables) above) for the container to function.
+
 ## 📊 Scoring Breakdown
 
 | Component | Weight | What it Measures |
